@@ -40,7 +40,7 @@ public final class BarKey {
    * @param plugin assigned to
    * @param key key
    * @deprecated Can have 2 separate same keys (the bars will {@link Override} each other if that
-   *     happens) & Keys are now stored as UUIDs
+   *     happens) and Keys are now stored as UUIDs
    */
   @Deprecated
   @DeprecateReason(
