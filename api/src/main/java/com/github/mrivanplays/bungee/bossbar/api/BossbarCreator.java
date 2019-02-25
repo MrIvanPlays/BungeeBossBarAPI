@@ -24,11 +24,8 @@ import com.github.mrivanplays.bungee.bossbar.api.keyed.BarKey;
 import com.github.mrivanplays.bungee.bossbar.api.keyed.KeyedBossbar;
 import com.github.mrivanplays.bungee.bossbar.api.style.BarColor;
 import com.github.mrivanplays.bungee.bossbar.api.style.BarStyle;
-import com.github.mrivanplays.bungee.bossbar.util.FromVersion;
 
 /** Represents a bossbar creator */
-@FromVersion(
-    "1.0.0; many methods have been changed during the 1.0.0 version and the current one make sure you know that.")
 public class BossbarCreator {
   /** Creator which the plugin uses */
   private static BungeeBossbarAPI creator = BungeeBossbarAPI.getInstance();

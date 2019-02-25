@@ -19,35 +19,55 @@
 
 package com.github.mrivanplays.bungee.bossbar.api.style;
 
-import com.github.mrivanplays.bungee.bossbar.util.FromVersion;
+/**
+ * Represents a bossbar color
+ */
+public enum BarColor
+{
+    /**
+     * Represents a bossbar with pink color
+     */
+    PINK( 0 ),
+    /**
+     * Represents a bossbar with blue color
+     */
+    BLUE( 1 ),
+    /**
+     * Represents a bossbar with red color
+     */
+    RED( 2 ),
+    /**
+     * Represents a bossbar with green color
+     */
+    GREEN( 3 ),
+    /**
+     * Represents a bossbar with yellow color
+     */
+    YELLOW( 4 ),
+    /**
+     * Represents a bossbar with purple color
+     */
+    PURPLE( 5 ),
+    /**
+     * Represents a bossbar with white color
+     */
+    WHITE( 6 );
 
-/** Represents a bossbar style */
-@FromVersion("1.0.0")
-public enum BarStyle {
-  /** Represents a solid bossbar */
-  SOLID(0),
-  /** Represents a segmented by 6 pieces bossbar */
-  SEGMENTED_6(1),
-  /** Represents a segmented by 10 pieces bossbar */
-  SEGMENTED_10(2),
-  /** Represents a segmented by 12 pieces bossbar */
-  SEGMENTED_12(3),
-  /** Represents a segmented by 20 pieces bossbar */
-  SEGMENTED_20(4);
+    private int num;
 
-  private int num;
+    BarColor(int intNum)
+    {
+        this.num = intNum;
+    }
 
-  BarStyle(int intNum) {
-    this.num = intNum;
-  }
-
-  /**
-   * Gets the style as integer how {@link net.md_5.bungee.protocol.packet.BossBar} requires the
-   * color
-   *
-   * @return style as int
-   */
-  public int toInt() {
-    return num;
-  }
+    /**
+     * Gets the color as integer how {@link net.md_5.bungee.protocol.packet.BossBar} requires the
+     * color
+     *
+     * @return color as int
+     */
+    public int toInt()
+    {
+        return num;
+    }
 }

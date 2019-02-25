@@ -4,6 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>com.github.mrivanplays</groupId>
+        <artifactId>BungeeBossbarAPI-parent</artifactId>
+        <version>1.5.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
     <groupId>com.github.mrivanplays</groupId>
     <artifactId>BungeeBossbarAPI</artifactId>
     <version>1.5.0</version>
@@ -106,13 +113,6 @@
         </resources>
     </build>
 
-    <repositories>
-        <repository>
-            <id>sonatype-oss-repo</id>
-            <url>https://oss.sonatype.org/content/groups/public/</url>
-        </repository>
-    </repositories>
-
     <licenses>
         <license>
             <name>MIT License</name>
@@ -130,15 +130,6 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
-
-    <dependencies>
-        <dependency>
-            <groupId>net.md-5</groupId>
-            <artifactId>bungeecord-api</artifactId>
-            <version>1.13-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
 
     <developers>
         <developer>

@@ -17,9 +17,39 @@
  *
  */
 
-package com.github.mrivanplays.bungee.bossbar.util;
+package com.github.mrivanplays.bungee.bossbar.api.keyed;
 
-/** A simple annotation for saying from what version the method/class it is */
-public @interface FromVersion {
-  String value();
+import java.util.concurrent.TimeUnit;
+
+import net.md_5.bungee.api.plugin.Plugin;
+
+import com.github.mrivanplays.bungee.bossbar.api.Bossbar;
+
+/**
+ * A keyed bossbar which is gettable and removable via key
+ */
+public interface KeyedBossbar extends Bossbar
+{
+
+    /**
+     * Gets the {@link Bossbar} key
+     *
+     * @return bossbar key
+     */
+    BarKey getKey();
+
+    /**
+     * We override the {@link Bossbar} one to remove this bossbar also *
+     */
+    void removeAllPlayers();
+
+    /**
+     * We override the {@link Bossbar} one to remove the bossbar also
+     *
+     * @param plugin plugin assigned to
+     * @param delay delay in the unit specified
+     * @param unit delay's unit
+     */
+    void removeAllPlayersAfter(Plugin plugin, int delay, TimeUnit unit);
+
 }
