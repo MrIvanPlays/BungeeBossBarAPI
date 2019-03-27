@@ -22,121 +22,27 @@ package com.github.mrivanplays.bungee.bossbar.api.keyed;
 import java.util.UUID;
 
 import net.md_5.bungee.api.plugin.Plugin;
-
-import com.github.mrivanplays.bungee.bossbar.util.DeprecateReason;
-import com.github.mrivanplays.bungee.bossbar.util.DeprecatedSince;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a bossbar key
+ * <b>Not recommended for own implementation</b>
  */
-public final class BarKey
-{
+public interface BarKey {
 
     /**
-     * Plugin, assigned to *
-     */
-    private Plugin plugin;
-    /**
-     * Keys are now stored as UUIDs from 1.5.0 *
-     */
-    private UUID key;
-
-    /**
-     * Creates a new key
+     * Gets the key, stored as UUID
      *
-     * @param plugin assigned to
-     * @param key key
-     * @deprecated Can have 2 separate same keys (the bars will {@link Override} each other if that
-     * happens) and Keys are now stored as UUIDs
+     * @return uuid
      */
-    @Deprecated
-    @DeprecateReason(
-            "Can have 2 separate same keys (the bars will Override each other if that happens) & Keys are now stored as UUIDs")
-    @DeprecatedSince("1.4.0")
-    public BarKey(Plugin plugin, String key)
-    {
-        this.plugin = plugin;
-        this.key = UUID.fromString( key );
-    }
+    @NotNull
+    UUID getKey();
 
     /**
-     * Creates a random key
-     *
-     * @param plugin plugin assigned to
-     */
-    public BarKey(Plugin plugin)
-    {
-        this.plugin = plugin;
-        this.key = UUID.randomUUID();
-    }
-
-    /**
-     * Gets the plugin where the key is assigned to
+     * Plugin, assigned to
      *
      * @return plugin
      */
-    public Plugin getPlugin()
-    {
-        return plugin;
-    }
-
-    /**
-     * Gets the key via UUID
-     *
-     * @return key via UUID
-     */
-    public UUID getKey()
-    {
-        return key;
-    }
-
-    @Override
-    public String toString()
-    {
-        return "BarKey=(Plugin=" + plugin + ", Key=" + key.toString() + ")";
-    }
-
-    /**
-     * Gets the key via string
-     *
-     * @return key via string
-     * @see UUID#toString()
-     * @deprecated Keys are now stored as UUIDs
-     */
-    @Deprecated
-    @DeprecateReason(" Keys are now stored as UUIDs ('UUID#toString') ")
-    @DeprecatedSince("1.5.0")
-    public String getKeyString()
-    {
-        return key.toString();
-    }
-
-    /**
-     * Override the {@link Object} equals
-     *
-     * @param object checked object
-     * @return does it equal or no
-     */
-    @Override
-    public boolean equals(Object object)
-    {
-        if ( object == null )
-        {
-            return false;
-        }
-        else if ( getClass() != object.getClass() )
-        {
-            return false;
-        }
-        else if ( !(object instanceof BarKey) )
-        {
-            return false;
-        }
-        else
-        {
-            BarKey otherKey = (BarKey) object;
-            return key.equals( otherKey.getKey() ) && plugin.getDescription().getName().equalsIgnoreCase( otherKey.getPlugin().getDescription().getName() );
-        }
-    }
-
+    @NotNull
+    Plugin getPlugin();
 }

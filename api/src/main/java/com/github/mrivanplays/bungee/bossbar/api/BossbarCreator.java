@@ -25,155 +25,168 @@ import com.github.mrivanplays.bungee.bossbar.api.keyed.KeyedBossbar;
 import com.github.mrivanplays.bungee.bossbar.api.style.BarColor;
 import com.github.mrivanplays.bungee.bossbar.api.style.BarStyle;
 
-/** Represents a bossbar creator */
+/**
+ * Represents a bossbar creator
+ * @deprecated use {@link BungeeBossbarAPI#createBossbar(BarTitle, BarColor, BarStyle, float)}
+ */
+@Deprecated
 public class BossbarCreator {
-  /** Creator which the plugin uses */
-  private static BungeeBossbarAPI creator = BungeeBossbarAPI.getInstance();
+    /**
+     * Creator which the plugin uses
+     */
+    private static BungeeBossbarAPI creator = BungeeBossbarAPI.getInstance();
 
-  /**
-   * Creates a bossbar with only parameter title
-   *
-   * @param title the title
-   * @return new bossbar
-   */
-  public static Bossbar createBossbar(BarTitle title) {
-    return createBossbar(title, BarColor.PINK);
-  }
+    /**
+     * Creates a bossbar with only parameter title
+     *
+     * @param title the title
+     * @return new bossbar
+     */
+    @Deprecated
+    public static Bossbar createBossbar(BarTitle title) {
+        return createBossbar(title, BarColor.PINK);
+    }
 
-  /**
-   * Creates a bossbar with only parameters title and color
-   *
-   * @param title the title
-   * @param color set color
-   * @return new bossbar
-   */
-  public static Bossbar createBossbar(BarTitle title, BarColor color) {
-    return createBossbar(title, color, BarStyle.SOLID);
-  }
+    /**
+     * Creates a bossbar with only parameters title and color
+     *
+     * @param title the title
+     * @param color set color
+     * @return new bossbar
+     */
+    @Deprecated
+    public static Bossbar createBossbar(BarTitle title, BarColor color) {
+        return createBossbar(title, color, BarStyle.SOLID);
+    }
 
-  /**
-   * Creates a bossbar with only parameters title and style
-   *
-   * @param title the title
-   * @param style set style
-   * @return new bossbar
-   */
-  public static Bossbar createBossbar(BarTitle title, BarStyle style) {
-    return createBossbar(title, BarColor.PINK, style);
-  }
+    /**
+     * Creates a bossbar with only parameters title and style
+     *
+     * @param title the title
+     * @param style set style
+     * @return new bossbar
+     */
+    @Deprecated
+    public static Bossbar createBossbar(BarTitle title, BarStyle style) {
+        return createBossbar(title, BarColor.PINK, style);
+    }
 
-  /**
-   * Creates a bossbar with only parameters title color and style
-   *
-   * @param title the title
-   * @param color set color
-   * @param style set style
-   * @return new bossbar
-   */
-  public static Bossbar createBossbar(BarTitle title, BarColor color, BarStyle style) {
-    return createBossbar(title, color, style, 1);
-  }
+    /**
+     * Creates a bossbar with only parameters title color and style
+     *
+     * @param title the title
+     * @param color set color
+     * @param style set style
+     * @return new bossbar
+     */
+    @Deprecated
+    public static Bossbar createBossbar(BarTitle title, BarColor color, BarStyle style) {
+        return createBossbar(title, color, style, 1);
+    }
 
-  /**
-   * Creates a bossbar with all parameters
-   *
-   * @param title the title
-   * @param color set color
-   * @param style set style
-   * @param progress set progress
-   * @return new bossbar
-   */
-  public static Bossbar createBossbar(
-      BarTitle title, BarColor color, BarStyle style, float progress) {
-    return creator.createBossbar(title, color, style, progress);
-  }
+    /**
+     * Creates a bossbar with all parameters
+     *
+     * @param title    the title
+     * @param color    set color
+     * @param style    set style
+     * @param progress set progress
+     * @return new bossbar
+     */
+    @Deprecated
+    public static Bossbar createBossbar(BarTitle title, BarColor color, BarStyle style, float progress) {
+        return creator.createBossbar(title, color, style, progress);
+    }
 
-  /**
-   * Creates a normal bossbar with string title
-   *
-   * @param title set title as string
-   * @param color set color
-   * @param style set style
-   * @param progress set progress
-   * @return new bossbar
-   */
-  public static Bossbar createBossbar(
-      String title, BarColor color, BarStyle style, float progress) {
-    return creator.createBossbar(title, color, style, progress);
-  }
+    /**
+     * Creates a normal bossbar with string title
+     *
+     * @param title    set title as string
+     * @param color    set color
+     * @param style    set style
+     * @param progress set progress
+     * @return new bossbar
+     */
+    @Deprecated
+    public static Bossbar createBossbar(String title, BarColor color, BarStyle style, float progress) {
+        return creator.createBossbar(title, color, style, progress);
+    }
 
-  // --------------------------------------------------------------------------------------------------------------------
-  // Keyed bossbars start
-  // Everything downside is from version 1.3.3
+    // --------------------------------------------------------------------------------------------------------------------
+    // Keyed bossbars start
+    // Everything downside is from version 1.3.3
 
-  /**
-   * @param key bar key
-   * @param title title
-   * @return new keyed bossbar
-   */
-  public static KeyedBossbar createBossbar(BarKey key, BarTitle title) {
-    return createBossbar(key, title, BarColor.PINK);
-  }
+    /**
+     * @param key   bar key
+     * @param title title
+     * @return new keyed bossbar
+     */
+    @Deprecated
+    public static KeyedBossbar createBossbar(BarKey key, BarTitle title) {
+        return createBossbar(key, title, BarColor.PINK);
+    }
 
-  /**
-   * @param key bar key
-   * @param title title
-   * @param style style
-   * @return new keyed bossbar
-   */
-  public static KeyedBossbar createBossbar(BarKey key, BarTitle title, BarStyle style) {
-    return createBossbar(key, title, BarColor.PINK, style);
-  }
+    /**
+     * @param key   bar key
+     * @param title title
+     * @param style style
+     * @return new keyed bossbar
+     */
+    @Deprecated
+    public static KeyedBossbar createBossbar(BarKey key, BarTitle title, BarStyle style) {
+        return createBossbar(key, title, BarColor.PINK, style);
+    }
 
-  /**
-   * @param key bar key
-   * @param title title
-   * @param color color
-   * @return new keyed bossbar
-   */
-  public static KeyedBossbar createBossbar(BarKey key, BarTitle title, BarColor color) {
-    return createBossbar(key, title, color, BarStyle.SOLID);
-  }
+    /**
+     * @param key   bar key
+     * @param title title
+     * @param color color
+     * @return new keyed bossbar
+     */
+    @Deprecated
+    public static KeyedBossbar createBossbar(BarKey key, BarTitle title, BarColor color) {
+        return createBossbar(key, title, color, BarStyle.SOLID);
+    }
 
-  /**
-   * @param key bar key
-   * @param title title
-   * @param color color
-   * @param style style
-   * @return new keyed bossbar
-   */
-  public static KeyedBossbar createBossbar(
-      BarKey key, BarTitle title, BarColor color, BarStyle style) {
-    return createBossbar(key, title, color, style, 1);
-  }
+    /**
+     * @param key   bar key
+     * @param title title
+     * @param color color
+     * @param style style
+     * @return new keyed bossbar
+     */
+    @Deprecated
+    public static KeyedBossbar createBossbar(BarKey key, BarTitle title, BarColor color, BarStyle style) {
+        return createBossbar(key, title, color, style, 1);
+    }
 
-  /**
-   * Creates a new {@link KeyedBossbar} which is removable
-   *
-   * @param key bar key
-   * @param title title
-   * @param color color
-   * @param style style
-   * @param progress progress
-   * @return new keyed bossbar
-   */
-  public static KeyedBossbar createBossbar(
-      BarKey key, BarTitle title, BarColor color, BarStyle style, float progress) {
-    return creator.createBossbar(key, title, color, style, progress);
-  }
+    /**
+     * Creates a new {@link KeyedBossbar} which is removable
+     *
+     * @param key      bar key
+     * @param title    title
+     * @param color    color
+     * @param style    style
+     * @param progress progress
+     * @return new keyed bossbar
+     */
+    @Deprecated
+    public static KeyedBossbar createBossbar(BarKey key, BarTitle title, BarColor color, BarStyle style, float progress) {
+        return creator.createBossbar(key, title, color, style, progress);
+    }
 
-  /**
-   * Creates a new {@link KeyedBossbar} with string title which is removable
-   *
-   * @param key bar key
-   * @param title string title
-   * @param color color
-   * @param style style
-   * @param progress progress
-   * @return new keyed bossbar
-   */
-  public static KeyedBossbar createBossbar(
-      BarKey key, String title, BarColor color, BarStyle style, float progress) {
-    return creator.createBossbar(key, title, color, style, progress);
-  }
+    /**
+     * Creates a new {@link KeyedBossbar} with string title which is removable
+     *
+     * @param key      bar key
+     * @param title    string title
+     * @param color    color
+     * @param style    style
+     * @param progress progress
+     * @return new keyed bossbar
+     */
+    @Deprecated
+    public static KeyedBossbar createBossbar(BarKey key, String title, BarColor color, BarStyle style, float progress) {
+        return creator.createBossbar(key, title, color, style, progress);
+    }
 }

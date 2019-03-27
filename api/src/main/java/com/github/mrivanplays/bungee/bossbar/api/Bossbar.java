@@ -24,6 +24,7 @@ import java.util.concurrent.TimeUnit;
 
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Plugin;
+import org.jetbrains.annotations.NotNull;
 
 import com.github.mrivanplays.bungee.bossbar.api.style.BarColor;
 import com.github.mrivanplays.bungee.bossbar.api.style.BarStyle;
@@ -33,8 +34,7 @@ import com.github.mrivanplays.bungee.bossbar.exception.ProgressException;
  * Represents a new bossbar different than the {@link net.md_5.bungee.protocol.packet.BossBar}
  * provided one
  */
-public interface Bossbar
-{
+public interface Bossbar {
 
     /**
      * Adds all online {@link ProxiedPlayer} to the bossbar
@@ -45,8 +45,8 @@ public interface Bossbar
      * Adds all online {@link ProxiedPlayer} to the bossbar after some time specified in the unit
      *
      * @param plugin plugin assigned to
-     * @param delay delay in unit
-     * @param unit delay's unit
+     * @param delay  delay in unit
+     * @param unit   delay's unit
      */
     void addOnlinePlayersAfter(Plugin plugin, int delay, TimeUnit unit);
 
@@ -63,8 +63,8 @@ public interface Bossbar
      *
      * @param player added player
      * @param plugin plugin assigned to
-     * @param delay delay in the unit specified
-     * @param unit delay's unit
+     * @param delay  delay in the unit specified
+     * @param unit   delay's unit
      */
     void addPlayerAfter(ProxiedPlayer player, Plugin plugin, int delay, TimeUnit unit);
 
@@ -80,8 +80,8 @@ public interface Bossbar
      *
      * @param player removed player
      * @param plugin plugin assigned to
-     * @param delay delay in the unit specified
-     * @param unit delay's unit
+     * @param delay  delay in the unit specified
+     * @param unit   delay's unit
      */
     void removePlayerAfter(ProxiedPlayer player, Plugin plugin, int delay, TimeUnit unit);
 
@@ -89,8 +89,8 @@ public interface Bossbar
      * Removes all players from the bossbar after some amount of time
      *
      * @param plugin plugin assigned to
-     * @param delay delay in the unit specified
-     * @param unit delay's unit
+     * @param delay  delay in the unit specified
+     * @param unit   delay's unit
      */
     void removeAllPlayersAfter(Plugin plugin, int delay, TimeUnit unit);
 
@@ -99,6 +99,7 @@ public interface Bossbar
      *
      * @return all players in the bossbar
      */
+    @NotNull
     List<ProxiedPlayer> getPlayers();
 
     /**
@@ -111,6 +112,7 @@ public interface Bossbar
      *
      * @return color of the bossbar
      */
+    @NotNull
     BarColor getColor();
 
     /**
@@ -125,6 +127,7 @@ public interface Bossbar
      *
      * @return style of the bossbar
      */
+    @NotNull
     BarStyle getStyle();
 
     /**
@@ -139,18 +142,8 @@ public interface Bossbar
      *
      * @return bossbar title
      */
+    @NotNull
     BarTitle getTitle();
-
-    /**
-     * Sets the {@link BarTitle} as a string. But I still suggest looking into
-     *
-     * @param newTitle set title by string
-     * @see #setTitle(BarTitle)
-     */
-    default void setTitle(String newTitle)
-    {
-        setTitle( new BarTitle( newTitle ) );
-    }
 
     /**
      * Sets a new bossbar {@link BarTitle}
@@ -160,21 +153,11 @@ public interface Bossbar
     void setTitle(BarTitle title);
 
     /**
-     * Gets the bossbar title as {@link String}. But I still suggest looking into
-     *
-     * @return bossbar title as string
-     * @see #getTitle()
-     */
-    default String getTitleString()
-    {
-        return getTitle().asString();
-    }
-
-    /**
      * Checks if the bossbar is visible or no
      *
      * @return true/false
      */
+    @NotNull
     boolean isVisible();
 
     /**
@@ -189,6 +172,7 @@ public interface Bossbar
      *
      * @return bossbar progress
      */
+    @NotNull
     float getProgress();
 
     /**

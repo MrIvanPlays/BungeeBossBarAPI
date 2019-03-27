@@ -28,8 +28,7 @@ import com.github.mrivanplays.bungee.bossbar.api.Bossbar;
 /**
  * A keyed bossbar which is gettable and removable via key
  */
-public interface KeyedBossbar extends Bossbar
-{
+public interface KeyedBossbar extends Bossbar {
 
     /**
      * Gets the {@link Bossbar} key
@@ -39,17 +38,19 @@ public interface KeyedBossbar extends Bossbar
     BarKey getKey();
 
     /**
-     * We override the {@link Bossbar} one to remove this bossbar also *
+     * We override the {@link Bossbar} one to remove the bossbar also
      */
+    @Override
     void removeAllPlayers();
 
     /**
      * We override the {@link Bossbar} one to remove the bossbar also
      *
      * @param plugin plugin assigned to
-     * @param delay delay in the unit specified
-     * @param unit delay's unit
+     * @param delay  delay in the unit specified
+     * @param unit   delay's unit
      */
+    @Override
     void removeAllPlayersAfter(Plugin plugin, int delay, TimeUnit unit);
 
 }

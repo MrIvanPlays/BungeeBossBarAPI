@@ -19,10 +19,19 @@
 
 package com.github.mrivanplays.bungee.bossbar.util;
 
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
 /**
  * A annotation which does nothing at all only tells at the deprecated methods from what version the
  * method is deprecated
  */
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.METHOD, ElementType.TYPE, ElementType.CONSTRUCTOR})
+@Documented
 public @interface DeprecatedSince {
-  String value();
+    String value();
 }
