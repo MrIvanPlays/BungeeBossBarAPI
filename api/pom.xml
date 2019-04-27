@@ -63,7 +63,9 @@
         <repository>
             <id>bintray-mrivanplaysbg-com.github.mrivanplays</id>
             <name>MrIvanPlaysBG-com.github.mrivanplays</name>
-            <url>https://api.bintray.com/maven/mrivanplaysbg/com.github.mrivanplays/BungeeBossbarAPI/;publish=1</url>
+            <url>
+                https://api.bintray.com/maven/mrivanplaysbg/com.github.mrivanplays/BungeeBossbarAPI/;publish=1
+            </url>
         </repository>
     </distributionManagement>
 
@@ -72,22 +74,6 @@
             <id>MrIvanPlays</id>
         </developer>
     </developers>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>13.0</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
-
-    <repositories>
-        <repository>
-            <id>sonatype</id>
-            <url>http://repository.sonatype.org/content/groups/public/</url>
-        </repository>
-    </repositories>
 
     <profiles>
         <profile>

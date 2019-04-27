@@ -33,7 +33,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Represents a multifunctional bossbar title supporting the Chat Component API
  */
-public final class BarTitle {
+public final class BarTitle
+{
 
     /**
      * String title empty if title is a {@link BaseComponent} or {@link BaseComponent[]}
@@ -55,7 +56,8 @@ public final class BarTitle {
      *
      * @param title set title
      */
-    public BarTitle(String title) {
+    public BarTitle(String title)
+    {
         this.title = title;
     }
 
@@ -64,7 +66,8 @@ public final class BarTitle {
      *
      * @param component set title's component
      */
-    public BarTitle(BaseComponent component) {
+    public BarTitle(BaseComponent component)
+    {
         this.baseComponent = component;
     }
 
@@ -73,7 +76,8 @@ public final class BarTitle {
      *
      * @param components set title's components
      */
-    public BarTitle(BaseComponent[] components) {
+    public BarTitle(BaseComponent[] components)
+    {
         this.baseComponents = components;
     }
 
@@ -85,7 +89,8 @@ public final class BarTitle {
      * @deprecated should not be used.
      */
     @Deprecated
-    public static TitleBuilder builder() {
+    public static TitleBuilder builder()
+    {
         return new TitleBuilder();
     }
 
@@ -95,29 +100,40 @@ public final class BarTitle {
      * @return the title as string
      */
     @Nullable
-    public String asString() {
-        if (title != null) {
+    public String asString()
+    {
+        if ( title != null )
+        {
             return title;
-        } else {
-            if (baseComponent != null) {
+        } else
+        {
+            if ( baseComponent != null )
+            {
                 return baseComponent.toLegacyText();
-            } else {
-                return ComponentSerializer.toString(baseComponents);
+            } else
+            {
+                return ComponentSerializer.toString( baseComponents );
             }
         }
     }
 
     @Override
-    public String toString() {
-        if (title.equalsIgnoreCase("")) {
-            if (baseComponent != null) {
+    public String toString()
+    {
+        if ( title.equalsIgnoreCase( "" ) )
+        {
+            if ( baseComponent != null )
+            {
                 return "BarTitle=(component=" + baseComponent + ")";
-            } else {
-                if (baseComponents != null) {
+            } else
+            {
+                if ( baseComponents != null )
+                {
                     return "BarTitle=(components=" + baseComponents + ")";
                 }
             }
-        } else {
+        } else
+        {
             return "BarTitle=(title=" + title + ")";
         }
         return "";
@@ -129,14 +145,19 @@ public final class BarTitle {
      * @return set title as {@link BaseComponent}.
      */
     @NotNull
-    public BaseComponent asComponent() {
-        if (baseComponent != null) {
+    public BaseComponent asComponent()
+    {
+        if ( baseComponent != null )
+        {
             return baseComponent;
-        } else {
-            if (title != null) {
-                return new TextComponent(title);
-            } else {
-                return new TextComponent(baseComponents);
+        } else
+        {
+            if ( title != null )
+            {
+                return new TextComponent( title );
+            } else
+            {
+                return new TextComponent( baseComponents );
             }
         }
     }
@@ -147,15 +168,21 @@ public final class BarTitle {
      * @return set title as {@link BaseComponent[]}.
      */
     @NotNull
-    public BaseComponent[] asComponents() {
-        if (baseComponents != null) {
+    public BaseComponent[] asComponents()
+    {
+        if ( baseComponents != null )
+        {
             return baseComponents;
-        } else {
-            if (baseComponent != null) {
-                return new BaseComponent[]{baseComponent};
-            } else {
-                if (title != null) {
-                    return TextComponent.fromLegacyText(title);
+        } else
+        {
+            if ( baseComponent != null )
+            {
+                return new BaseComponent[] { baseComponent };
+            } else
+            {
+                if ( title != null )
+                {
+                    return TextComponent.fromLegacyText( title );
                 }
             }
         }
@@ -165,7 +192,8 @@ public final class BarTitle {
     /**
      * Represents a title builder for more easier creating of string titles for your bossbar
      */
-    public static class TitleBuilder {
+    public static class TitleBuilder
+    {
 
         /**
          * Title represented as {@link String}
@@ -198,7 +226,8 @@ public final class BarTitle {
          * @param text title
          * @return current instance of builder
          */
-        public TitleBuilder text(String text) {
+        public TitleBuilder text(String text)
+        {
             this.text = text;
             return this;
         }
@@ -209,7 +238,8 @@ public final class BarTitle {
          * @param color new color
          * @return current instance of builder
          */
-        public TitleBuilder color(ChatColor color) {
+        public TitleBuilder color(ChatColor color)
+        {
             this.color = color;
             return this;
         }
@@ -220,7 +250,8 @@ public final class BarTitle {
          * @param underline value
          * @return current instance of builder
          */
-        public TitleBuilder underline(boolean underline) {
+        public TitleBuilder underline(boolean underline)
+        {
             this.isUnderlined = underline;
             return this;
         }
@@ -231,7 +262,8 @@ public final class BarTitle {
          * @param obfuscated value
          * @return current instance of builder
          */
-        public TitleBuilder obfuscated(boolean obfuscated) {
+        public TitleBuilder obfuscated(boolean obfuscated)
+        {
             this.isObfuscated = obfuscated;
             return this;
         }
@@ -242,7 +274,8 @@ public final class BarTitle {
          * @param bold value
          * @return current instance of builder
          */
-        public TitleBuilder bold(boolean bold) {
+        public TitleBuilder bold(boolean bold)
+        {
             this.isBold = bold;
             return this;
         }
@@ -253,7 +286,8 @@ public final class BarTitle {
          * @param italic value
          * @return current instance of builder
          */
-        public TitleBuilder italic(boolean italic) {
+        public TitleBuilder italic(boolean italic)
+        {
             this.isItalic = italic;
             return this;
         }
@@ -264,7 +298,8 @@ public final class BarTitle {
          * @param strikeout value
          * @return current instance of builder
          */
-        public TitleBuilder strikeout(boolean strikeout) {
+        public TitleBuilder strikeout(boolean strikeout)
+        {
             this.isStrikeout = strikeout;
             return this;
         }
@@ -276,8 +311,9 @@ public final class BarTitle {
          * @param extra extra
          * @return current instance of builder
          */
-        public TitleBuilder addExtra(String extra) {
-            extras.add(extra);
+        public TitleBuilder addExtra(String extra)
+        {
+            extras.add( extra );
             return this;
         }
 
@@ -286,13 +322,15 @@ public final class BarTitle {
          *
          * @return {@link BarTitle} to create bossbars with it (Kappa123)
          */
-        public BarTitle build() {
-            ComponentBuilder builder = new ComponentBuilder(text).color(color).bold(isBold).underlined(isUnderlined).obfuscated(isObfuscated)
-                    .italic(isItalic).strikethrough(isStrikeout);
-            for (String extra : extras) {
-                builder.append(extra);
+        public BarTitle build()
+        {
+            ComponentBuilder builder = new ComponentBuilder( text ).color( color ).bold( isBold ).underlined( isUnderlined ).obfuscated( isObfuscated )
+                    .italic( isItalic ).strikethrough( isStrikeout );
+            for ( String extra : extras )
+            {
+                builder.append( extra );
             }
-            return new BarTitle(builder.create());
+            return new BarTitle( builder.create() );
         }
 
     }

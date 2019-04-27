@@ -22,39 +22,41 @@ package com.github.mrivanplays.bungee.bossbar.api.style;
 /**
  * Represents a bossbar color
  */
-public enum BarColor {
+public enum BarColor
+{
     /**
      * Represents a bossbar with pink color
      */
-    PINK(0),
+    PINK( 0 ),
     /**
      * Represents a bossbar with blue color
      */
-    BLUE(1),
+    BLUE( 1 ),
     /**
      * Represents a bossbar with red color
      */
-    RED(2),
+    RED( 2 ),
     /**
      * Represents a bossbar with green color
      */
-    GREEN(3),
+    GREEN( 3 ),
     /**
      * Represents a bossbar with yellow color
      */
-    YELLOW(4),
+    YELLOW( 4 ),
     /**
      * Represents a bossbar with purple color
      */
-    PURPLE(5),
+    PURPLE( 5 ),
     /**
      * Represents a bossbar with white color
      */
-    WHITE(6);
+    WHITE( 6 );
 
     private int num;
 
-    BarColor(int intNum) {
+    BarColor(int intNum)
+    {
         this.num = intNum;
     }
 
@@ -64,7 +66,8 @@ public enum BarColor {
      *
      * @return color as int
      */
-    public int toInt() {
+    public int toInt()
+    {
         return num;
     }
 }

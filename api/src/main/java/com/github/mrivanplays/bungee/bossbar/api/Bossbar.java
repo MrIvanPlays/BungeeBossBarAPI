@@ -34,7 +34,8 @@ import com.github.mrivanplays.bungee.bossbar.exception.ProgressException;
  * Represents a new bossbar different than the {@link net.md_5.bungee.protocol.packet.BossBar}
  * provided one
  */
-public interface Bossbar {
+public interface Bossbar
+{
 
     /**
      * Adds all online {@link ProxiedPlayer} to the bossbar
@@ -157,7 +158,6 @@ public interface Bossbar {
      *
      * @return true/false
      */
-    @NotNull
     boolean isVisible();
 
     /**
@@ -172,7 +172,6 @@ public interface Bossbar {
      *
      * @return bossbar progress
      */
-    @NotNull
     float getProgress();
 
     /**

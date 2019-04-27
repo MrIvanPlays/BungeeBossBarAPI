@@ -30,8 +30,10 @@ import java.lang.annotation.Target;
  * method is deprecated
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.METHOD, ElementType.TYPE, ElementType.CONSTRUCTOR})
+@Target({ ElementType.METHOD, ElementType.TYPE, ElementType.CONSTRUCTOR })
 @Documented
-public @interface DeprecatedSince {
+public @interface DeprecatedSince
+{
+
     String value();
 }

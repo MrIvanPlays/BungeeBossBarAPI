@@ -22,31 +22,33 @@ package com.github.mrivanplays.bungee.bossbar.api.style;
 /**
  * Represents a bossbar style
  */
-public enum BarStyle {
+public enum BarStyle
+{
     /**
      * Represents a solid bossbar
      */
-    SOLID(0),
+    SOLID( 0 ),
     /**
      * Represents a segmented by 6 pieces bossbar
      */
-    SEGMENTED_6(1),
+    SEGMENTED_6( 1 ),
     /**
      * Represents a segmented by 10 pieces bossbar
      */
-    SEGMENTED_10(2),
+    SEGMENTED_10( 2 ),
     /**
      * Represents a segmented by 12 pieces bossbar
      */
-    SEGMENTED_12(3),
+    SEGMENTED_12( 3 ),
     /**
      * Represents a segmented by 20 pieces bossbar
      */
-    SEGMENTED_20(4);
+    SEGMENTED_20( 4 );
 
     private int num;
 
-    BarStyle(int intNum) {
+    BarStyle(int intNum)
+    {
         this.num = intNum;
     }
 
@@ -56,7 +58,8 @@ public enum BarStyle {
      *
      * @return style as int
      */
-    public int toInt() {
+    public int toInt()
+    {
         return num;
     }
 }

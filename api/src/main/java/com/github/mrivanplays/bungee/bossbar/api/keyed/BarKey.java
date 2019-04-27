@@ -28,7 +28,8 @@ import org.jetbrains.annotations.NotNull;
  * Represents a bossbar key
  * <b>Not recommended for own implementation</b>
  */
-public interface BarKey {
+public interface BarKey
+{
 
     /**
      * Gets the key, stored as UUID

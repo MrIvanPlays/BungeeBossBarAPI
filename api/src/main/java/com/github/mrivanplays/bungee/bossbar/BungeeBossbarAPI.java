@@ -42,7 +42,8 @@ import com.github.mrivanplays.bungee.bossbar.exception.ProgressException;
 /**
  * Represents API things
  */
-public abstract class BungeeBossbarAPI {
+public abstract class BungeeBossbarAPI
+{
 
     /**
      * Class's instance *
@@ -55,7 +56,8 @@ public abstract class BungeeBossbarAPI {
      * @return instance of this class
      */
     @NotNull
-    public static BungeeBossbarAPI getInstance() {
+    public static BungeeBossbarAPI getInstance()
+    {
         return instance;
     }
 
@@ -64,9 +66,10 @@ public abstract class BungeeBossbarAPI {
      *
      * @param instance new instance
      */
-    public static void setInstance(@NotNull BungeeBossbarAPI instance) {
-        Preconditions.checkNotNull(instance, "instance");
-        Preconditions.checkArgument(BungeeBossbarAPI.instance == null, "Instance already set");
+    public static void setInstance(@NotNull BungeeBossbarAPI instance)
+    {
+        Preconditions.checkNotNull( instance, "instance" );
+        Preconditions.checkArgument( BungeeBossbarAPI.instance == null, "Instance already set" );
         BungeeBossbarAPI.instance = instance;
     }
 
@@ -96,8 +99,9 @@ public abstract class BungeeBossbarAPI {
      */
     @NotNull
     @Deprecated
-    public Bossbar createBossbar(String title, BarColor color, BarStyle style, float progress) {
-        return createBossbar(new BarTitle(title), color, style, progress);
+    public Bossbar createBossbar(String title, BarColor color, BarStyle style, float progress)
+    {
+        return createBossbar( new BarTitle( title ), color, style, progress );
     }
 
     /**
@@ -137,8 +141,9 @@ public abstract class BungeeBossbarAPI {
      */
     @Deprecated
     @NotNull
-    public KeyedBossbar createBossbar(BarKey key, String title, BarColor color, BarStyle style, float progress) {
-        return createBossbar(key, new BarTitle(title), color, style, progress);
+    public KeyedBossbar createBossbar(BarKey key, String title, BarColor color, BarStyle style, float progress)
+    {
+        return createBossbar( key, new BarTitle( title ), color, style, progress );
     }
 
     /**
@@ -147,8 +152,9 @@ public abstract class BungeeBossbarAPI {
      * @return all keyed bossbars
      */
     @NotNull
-    public Set<KeyedBossbar> getBossbars() {
-        return Collections.unmodifiableSet(new HashSet<>(getBossbarsRaw().values()));
+    public Set<KeyedBossbar> getBossbars()
+    {
+        return Collections.unmodifiableSet( new HashSet<>( getBossbarsRaw().values() ) );
     }
 
     /**
@@ -198,7 +204,7 @@ public abstract class BungeeBossbarAPI {
      * Creates a new key, used for keyed bossbars.
      *
      * @param plugin plugin
-     * @param key key
+     * @param key    key
      * @return new key
      */
     @NotNull

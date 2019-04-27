@@ -28,7 +28,8 @@ import com.github.mrivanplays.bungee.bossbar.api.Bossbar;
 /**
  * A keyed bossbar which is gettable and removable via key
  */
-public interface KeyedBossbar extends Bossbar {
+public interface KeyedBossbar extends Bossbar
+{
 
     /**
      * Gets the {@link Bossbar} key
