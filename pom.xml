@@ -5,23 +5,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.mrivanplays</groupId>
-    <artifactId>BungeeBossbarAPI-parent</artifactId>
-    <version>dev</version>
-    <packaging>pom</packaging>
+    <artifactId>BungeeBossbarAPI</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-    <name>BungeeBossbarAPI-Parent</name>
-    <description>Parent POM for api and implementation</description>
+    <name>BungeeBossbarAPI</name>
+    <description>BossBar API for BungeeCord</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-
-    <modules>
-        <module>api</module>
-        <module>impl</module>
-    </modules>
 
     <repositories>
         <repository>
@@ -31,20 +26,31 @@
     </repositories>
 
     <build>
+        <defaultGoal>clean package</defaultGoal>
+        <sourceDirectory>src/main/java</sourceDirectory>
         <plugins>
             <plugin>
-                <groupId>net.md-5</groupId>
-                <artifactId>scriptus</artifactId>
-                <version>0.3.1</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
                 <configuration>
-                    <format>${project.name}:v{$project.version}</format>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.1.0</version>
                 <executions>
                     <execution>
-                        <phase>initialize</phase>
+                        <phase>package</phase>
                         <goals>
-                            <goal>describe</goal>
+                            <goal>shade</goal>
                         </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -55,13 +61,26 @@
         <dependency>
             <groupId>net.md-5</groupId>
             <artifactId>bungeecord-api</artifactId>
-            <version>1.13-SNAPSHOT</version>
+            <version>1.14-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Maven is bugged here for some reason, thats why these down are here -->
+        <dependency>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-protocol</artifactId>
+            <version>1.14-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>13.0</version>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-chat</artifactId>
+            <version>1.14-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>20.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
