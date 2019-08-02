@@ -295,7 +295,16 @@ public class BossBar {
    * @param flags the flag(s) you wish to add
    */
   public void addFlags(BossBar.Flag... flags) {
-    if (this.flags.addAll(Arrays.asList(flags)) && visible) {
+    addFlags(Arrays.asList(flags));
+  }
+
+  /**
+   * Adds flags to the boss bar
+   *
+   * @param flags the flags you wish to add
+   */
+  public void addFlags(Collection<BossBar.Flag> flags) {
+    if (this.flags.addAll(flags) && visible) {
       sendToAffected(updateFlags());
     }
   }
@@ -318,7 +327,16 @@ public class BossBar {
    * @param flags the flag(s) you wish to remove
    */
   public void removeFlags(BossBar.Flag... flags) {
-    if (this.flags.removeAll(Arrays.asList(flags)) && visible) {
+    removeFlags(Arrays.asList(flags));
+  }
+
+  /**
+   * Removes the specified flags from the boss bar
+   *
+   * @param flags the flags you wish to remove
+   */
+  public void removeFlags(Collection<BossBar.Flag> flags) {
+    if (this.flags.removeAll(flags) && visible) {
       sendToAffected(updateFlags());
     }
   }
@@ -442,9 +460,9 @@ public class BossBar {
 
     public BossBar build() {
       BossBar bossBar = new BossBar(title, color, style, health);
-      bossBar.addPlayers(players);
-      bossBar.addFlags(flags.toArray(new BossBar.Flag[0]));
+      bossBar.addFlags(flags);
       bossBar.setVisible(visible);
+      bossBar.addPlayers(players);
       return bossBar;
     }
   }
